@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div>Дата последнего переиздания: {{ data.release }}</div>
+    <ul>
+        {% if data.id == 'DarkIris' %}
+            <img src="{% static "images/DarkIris.jpg"  %}">
+        {% elif data.id == 'Katrina' %}
+            <img src="{% static "images/Katrina.jpg" %}">
+        {% else %}
+            <img src="{% static "images/RacerBlue.jpg" %}">
+        {%endif%}
+    </ul>
+{% endblock %}

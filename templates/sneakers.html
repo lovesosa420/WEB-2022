@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<ul>
+    {% for sneaker in data.sneakers %}
+        <li><a href="{% url 'sneaker_url' sneaker.id sneaker.release%}">{{ sneaker.title }}</a> </li>
+    {% empty %}
+        <li>Список пуст</li>
+    {% endfor %}
+</ul>
+{% endblock %}
