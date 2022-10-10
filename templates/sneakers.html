@@ -3,7 +3,9 @@
 {% block content %}
 <ul>
     {% for sneaker in data.sneakers %}
-        <li><a href="{% url 'sneaker_url' sneaker.id sneaker.release%}">{{ sneaker.title }}</a> </li>
+        <p>
+            <a href="{% url 'sneaker_url' sneaker.id sneaker.photo%}">{{ sneaker.title }}</a>
+        </p>
     {% empty %}
         <li>Список пуст</li>
     {% endfor %}
