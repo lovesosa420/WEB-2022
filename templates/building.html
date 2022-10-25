@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<ul>
+    {% for building in data.buildings %}
+        <div>
+            <div><a href="{% url 'room_url' building.name_building%}">{{ building.name_building }}</a></div>
+            <img src="/media/{{ building.photo }}"  width="250" height="180" class="image-radius"/>
+        </div>
+    {% empty %}
+        <li>Список пуст</li>
+    {% endfor %}
+</ul>
+{% endblock %}
